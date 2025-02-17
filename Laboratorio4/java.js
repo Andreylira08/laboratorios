@@ -45,3 +45,67 @@ if (numeroAleatorio === (num + num2)) {
 
     alert("No le sabes mi bro. El tiempo que tardaste en responder fue: " + TiempoTotal + " ms");
 }
+
+
+
+function getNumeros(){
+    negativos= 0;
+    positivos= 0;
+    ceros= 0; 
+    const a= [1,2,3,0,-2,-3,-4]
+    for (let i=0; i<= a.length;i++){
+        if (a[i] < 0 ){
+            negativos++
+        }
+        if(a[i]>0){
+            positivos++
+        }
+        if(a[i]== 0){
+            ceros++
+    }
+}
+    return {
+        negativos: negativos,
+        positivos: positivos,
+        ceros: ceros
+    };
+}
+
+function getPromedio(){
+    const b= [1,1,1,1,2,2,2,2]
+    let suma=0
+    let cantidad=0
+    for (let i=0; i< b.length;i++){
+        cantidad++
+        suma = b[i]+suma
+    }
+
+    return { suma, cantidad };
+
+}
+
+function mostrarResultados() {
+    const resultados = getNumeros();
+    
+    document.getElementById('negativos').textContent = resultados.negativos;
+    document.getElementById('positivos').textContent = resultados.positivos;
+    document.getElementById('ceros').textContent = resultados.ceros;
+}
+
+function mostrarPromedio(){
+    const promedios = getPromedio();
+    const promedio =  promedios.suma / promedios.cantidad; 
+    document.getElementById('promedio').textContent=promedio; 
+}
+let numero = 123
+
+function mostrarInversa(){
+    nstring= numero.toString(); 
+    arreglo = nstring.split('');
+    inversa= arreglo.reverse();
+    num= inversa.join('')
+
+    
+    document.getElementById('inversa').textContent = num; 
+
+}
