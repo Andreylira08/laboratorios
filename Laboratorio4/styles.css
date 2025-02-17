@@ -7,11 +7,17 @@ body {
     padding: 4em 1em;
 
   }
+  p{
+    margin: 0 auto;
+    max-width: 50em;
+    text-align: justify;
+  }
 
   h2 {
     color: #333;
     margin-top: 1em;
     padding-top: 1em;
+    line-height: 1.5;
 
   }
 

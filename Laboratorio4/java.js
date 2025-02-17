@@ -109,3 +109,11 @@ function mostrarInversa(){
     document.getElementById('inversa').textContent = num; 
 
 }
+
+function mostrarPrecio(){
+    let precio=350;
+    let iva = 21;      
+    const  precioTotal = precio + precio*21/100
+    document.getElementById('precio').textContent = precioTotal; 
+
+}
