@@ -1,137 +1,112 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="styles.css">
 <head>
-<style>
-.Titulo{
-        text-align: center;
-}
-.Yo{
-border-radius: 25px;
-margin: 0;
-padding: 6px; 
-background-color: palegoldenrod;
-}
-
-.fondo{
-
-        border-radius: 25px;
-        background-color: gray;
-        margin: 0;
-        padding: 6px;
-
-}
-.pregunta{
-        background-color: aliceblue;
-        margin: 0;
-        padding: 3px;
-        border-radius: 25px; 
-        margin-top: 20px;
-}
-
-footer {
- border-radius: 25px;
-  text-align: center;
-  padding: 1px;
-  background-color: red;
-  color: white;
-}
-
-
-
-
-</style>
-</head>
-
-
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello Bulma!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+      </head>
+      <body>
+      <section class="section">
+        <div class="container">
+          <h1 class="title">
+            Hello World
+          </h1>
+          <p class="subtitle">
+            Veamos la diferencia utilizando frameworks! <strong>Bulma</strong>!
+          </p>
+        </div>
+      </section>
+      </body>
 <body> 
         <header class = "Titulo">
-               <h1> ¿Quién soy? </h1> 
+               <h1 class ="title is-5"> ¿Quién soy? </h1> 
         </header>
 
         <article class ="Yo">
                 <header>
-                  <h1>Enrique Andrey Ramírez Lira</h1>
+                  <h1 class ="title is-5">Enrique Andrey Ramírez Lira</h1>
                   <time>A00572996</time>
                 </header>
                 <p>Me gusta que me digan <strong>kike</strong>, me apasiona el deporte, los libros y la tecnología. Tengo 20 años y nací en 2005, soy originario de león gto y me transferí a querétaro el semestre pasado</p>
         </article>
         <header class = "Titulo">
-                <h1> HTML </h1> 
+                <h1 class ="title is-5"> HTML </h1> 
          </header>
         <section class ="fondo">
                 <article class="pregunta">
-                        <h3> ¿Cuál es la diferencia entre Internet y la World Wide Web? </h3>
+                        <h3 class ="title is-5"> ¿Cuál es la diferencia entre Internet y la World Wide Web? </h3>
                         <p>Internet es una inmensa red de computadoras alrededor de todo el mundo conectadas entre sí. En cambio, la web (la World Wide Web) es una enorme colección de páginas que se asienta sobreesa red de computadoras. </p>
                         
                 </article>
                 <article class="pregunta">
-                        <h3> ¿Cuáles son las partes de un URL?</h3>
+                        <h3 class ="title is-5"> ¿Cuáles son las partes de un URL?</h3>
                         <p>Internet es una inmensa red de computadoras alrededor de todo el mundo conectadas entre sí. En cambio, la web (la World Wide Web) es una enorme colección de páginas que se asienta sobreesa red de computadoras. </p>
                         
                 </article>
                 <article class="pregunta">
-                        <h3> ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                        <h3 class ="title is-5"> ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
                         <p>GET: Crea un recurso HEAD: Provee información general (metadatos) acerca del documento <br> POST: Crea un recurso PUT: Actualiza un recurso existente. No lo crea si no existe <br> PATCH: Aplica modificaciones parciales al recurso DELETE: Pregunta al servidor borrar un elemento en específico  </p>
                         
                 </article>
                 <article class="pregunta">
-                        <h3> ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+                        <h3 class ="title is-5"> ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
                         <p>POST, Los datos no son visibles en la dirección URL, a diferencia del método GET, que anexa los datos como cadenas de consulta.  </p>
                         
                 </article>
 
                 <article class="pregunta">
-                        <h3> ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+                        <h3 class ="title is-5"> ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
                         <p>  GET</p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+                        <h3 class ="title is-5" > ¿Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
                         <p>  El código de estado 200 OK se utiliza para indicar que se recibió,procesó una solicitud y se realizó correctamente</p>
                 </article>
                 <article class="pregunta">
-                        <h3> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+                        <h3 class ="title is-5"> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
                         <p>  Un error 404 significa que la página solicitada no se encontró en el servidor por lo que es trabajo del desarrollador corregir buscar el problema y resolverlo </p>
                 </article>
 
                 <article class="pregunta">
-                        <h3> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+                        <h3 class ="title is-5" > ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
                         <p>  El error 500 es una señal de que algo dentro del servidor no está funcionando correctamente como la base de datos de corrompio, un error de archivo, etc. Por lo que es el desarrollador debe buscar dentro del servidor para solucionar el problema</p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+                        <h3 class ="title is-5"> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
                         <p>  Se trata de elementos que todavía se pueden usar, pero que se recomienda no emplear. Y es que, aunque los navegadores todavía den soporte, en poco tiempo puede que ya no, por lo que la página web que funcione con etiquetas obsoletas, dejaría de visualizarse correctamente. Como por ejemplo <strong> applet, acronym, bgsound,sir</strong></p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+                        <h3 class ="title is-5"> ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
                         <p> A diferencia de las versiones anteriores de HTML, que permitían crear sitios principalmente estáticos que necesitaban ser aderezados con CSS y JavaScript, HTML5 es mucho más dinámico e incluye elementos multimedia. Soporta de forma nativa el vídeo y el audio, e incluso puedes crear juegos o animaciones con él</p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+                        <h3 class ="title is-5"> ¿Qué componentes de estructura y estilo tiene una tabla?</h3>
                         <p>Los bloques de estructura de tablas HTML son los siguientes: Las celdas, que se organizan en filas y columnas. El elemento table, que es donde se establecerán todos los elementos dentro del objeto, tal como las columnas y las filas. También aparece el elemento fila, es decir, el elemento <tr></p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Cuáles son los principales controles de una forma HTML5?</h3>
+                        <h3 class ="title is-5"> ¿Cuáles son los principales controles de una forma HTML5?</h3>
                         <p> Text inputs, controles de fecha y hora, botones, número, selección. </p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h3>
+                        <h3 class ="title is-5"> ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h3>
                         <p> Puntua 538 de 571 puntos utilizando chrome </p>
                  </article>
 
                  <article class="pregunta">
-                        <h3> ¿Cuál es el ciclo de vida de los sistemas de información? ¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+                        <h3 class ="title is-5"> ¿Cuál es el ciclo de vida de los sistemas de información? ¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
                         <p> Es un sistema, automatizado o manual, que engloba a personas, máquinas y/o métodos organizados para recopilar, procesar, transmitir datos que representan información. En el cual engloba una serie de etapas en su ciclo de vida <strong> Planificación, análisis, Diseño, Implementación, Pruebas, Instalación, Uso y mantenimiento</strong> <br> Mientras que el ciclo de desarrollo es como un mapa que guía a través de cada etapa de desarrollo Fases: Planificación, análisis, diseño, desarrollo, pruebas, Implementación, mantenimiento. </p>
                  </article>
 
         </section>
-        <footer>
+        <footer class="notification is-link">
                 <p>Autor: Enrique Andrey Ramírez Lira<br>
 
                 <a href="https://code.visualstudio.com/">Editor Empleado</a></p>

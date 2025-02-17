@@ -1,0 +1,39 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+.Titulo{
+    text-align: center;
+}
+.Yo{
+border-radius: 25px;
+margin: 0;
+padding: 6px; 
+background-color: palegoldenrod;
+}
+
+.fondo{
+
+    border-radius: 25px;
+    background-color: gray;
+    margin: 0;
+    padding: 6px;
+
+}
+.pregunta{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 3px;
+    border-radius: 25px; 
+    margin-top: 20px;
+}
+
+footer {
+border-radius: 25px;
+text-align: center;
+padding: 1px;
+background-color: red;
+color: white;
+}
+p{
+    color: #212121; 
+
+}
