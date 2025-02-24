@@ -1,0 +1,11 @@
+p{
+
+    padding: 0 auto;
+
+}
+
+h1 {
+    padding-top: 20px;  /* Espacio dentro del título, arriba */
+    padding-bottom: 20px; /* Espacio dentro del título, abajo */
+
+}
