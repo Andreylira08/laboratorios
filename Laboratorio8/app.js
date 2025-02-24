@@ -131,7 +131,13 @@ const server = http.createServer( (request, response) => {
     const datos_completos = [];
     request.on('end',() =>{
        const string_datos_completos = Buffer.concat(datos_completos).toString();
-        console.log(datos_completos); 
+        console.log(string_datos_completos); 
+        //split () separa un string por el parámetro recibido,
+        //y cada parte la pone en un arreglo
+        const nueva_planta =string_datos_completos.split('='[1]);
+
+        //si fueran 2 inputs:
+        // const nueva_planta =string_datos_completos.split('&'[0].split('=')[1]);
     });
 
   } else {
