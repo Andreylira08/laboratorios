@@ -124,6 +124,16 @@ const server = http.createServer( (request, response) => {
     response.end();
   } else if(request.method == "POST" && request.url == "/agregar") {
 
+    request.on('data', () =>{
+        console.log(data); //---->> Llega el nombre en hexadecimal ----> lo que se lleno en el form
+    });
+
+    const datos_completos = [];
+    request.on('end',() =>{
+       const string_datos_completos = Buffer.concat(datos_completos).toString();
+        console.log(datos_completos); 
+    });
+
   } else {
     response.statusCode = 404;
     response.setHeader('Content-Type', 'text/html');
