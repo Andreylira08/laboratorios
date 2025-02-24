@@ -1,27 +1,13 @@
+const html_header = `
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Plantas!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-
-  <section class="section">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        Validemos tu <strong>CONTRASEÑA</strong>!
-      </p>
-      <h3 class ="subtitle"> La contraseña es contraseña</h3>
-    </div>
-</section>
-
-
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -87,65 +73,66 @@
           </div>
         </div>
       </nav>
-<section class="section"> 
-  <div class="columns">
-    <div class ="column">
-      <input id=contraseña_validar class="input is-primary" type="password" placeholder="Text input" style="width: 80%;" />
-      <button id="boton_validar" class="button is-danger">Validar</button>
-    </div> 
-    <div class="column"><span id="imagen_incorrecta"></span></div>
-    
-    
-  </div>
-  <form action="\agregar" method="POST">
-    <label for="nombre" class="label">Nombre de la planta</label>
-    <input
-    class="input is-link"
-    type="text"
-    placeholder="Link input"
-    id="nombre"/>
-    <br><br>
-    <input class ="button is-info" type="submit" value="Enviar">
-      
-  </form>
-</section>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Invernadero
+            </h1>
+            `;
+            
+const html_form = `<form action="/agregar" method="POST">
+              <label for="nombre" class="label">Nombre de la planta</label>
+              <input
+                class="input is-info"
+                type="text"
+                placeholder="Orquídea"
+                id="nombre"
+                name="nombre"
+              />
+              <br><br>
+              <input class="button is-info" type="submit" value="Enviar">
+            </form>`;
 
-<section class="section">
-  <header>
-    <h1 class ="title is-4"> ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h1>
-  </header>
-  <body> 
-    <p> La validación en el cliente permite proporcionar retroalimentación inmediata al usuario sin necesidad de recargar la página. Esto ayuda a evitar frustraciones y mejora la usabilidad. </p>
-
-  <header>
-    <h1 class ="title is-4"> ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h1>
-  </header>
-
-    <br>Usando herramientas como la consola, un usuario puede modificar el código JavaScript en tiempo de ejecución para omitir validaciones.
-
-
-  <header>
-    <h1 class ="title is-4"> Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h1>
-  </header>
-  
-    <br>Es una buena práctica porque la validación en JavaScript no está pensada como una medida de seguridad, sino como una forma de mejorar la experiencia del usuario y optimizar el rendimiento del servidor.
-  </body>
-</section>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
-          >CC BY NC SA 4.0</a
-        >.
-      </p>
-    </div>
-  </footer>
-  <script type = "text/javascript" src = "java.js"></script>
-
+const html_footer = `</div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+            The source code is licensed
+            <a href="https://opensource.org/license/mit">MIT</a>. The
+            website content is licensed
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
+              >CC BY NC SA 4.0</a
+            >.
+          </p>
+        </div>
+      </footer>
+      <script src="js/introjs.js"></script>
   </body>
 </html>
+`;
+
+const http = require('http');
+
+const server = http.createServer( (request, response) => {  
+  
+  if(request.method == "GET" && (request.url == "/agregar" || request.url == "/")) {
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html_header + html_form + html_footer);
+    response.end();
+  } else if(request.method == "POST" && request.url == "/agregar") {
+
+  } else {
+    response.statusCode = 404;
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html_header);
+    response.write('<div class="notification is-danger">La página no existe</div>');
+    response.write(html_footer);
+    response.end();
+  }
+    
+});
+
+server.listen(3000);
