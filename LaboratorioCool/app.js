@@ -80,7 +80,7 @@ const html_header = `
             </h1>
             `;
             
-const html_form = `<form action="/agregar" method="POST">
+const html_form = `<form action="/plantas/agregar" method="POST">
               <label for="nombre" class="label">Nombre de la planta</label>
               <input
                 class="input is-info"
@@ -138,14 +138,21 @@ app.use((request, response, next) => {
 //app.get para registrar un middleware para peticiones HTTP GET 
 
 app.get('/plantas/agregar',(request,response,next) => {                  //Registrar un middleware 
-    console.log(request.body)
+    
     response.send(html_header + html_form + html_footer); 
 });
 
 //app.post
 
 app.post('/plantas/agregar',(request,response,next) => {
-                      //Registrar un middleware 
+    console.log(request.body);
+    plantas.push(request.body.nombre);
+    let html=html_header; 
+    for(let planta of plantas){
+   
+    html += html_footer
+    
+}
     response.send(html_header + html_form + html_footer); 
 });
 
