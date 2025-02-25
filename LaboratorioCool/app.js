@@ -119,6 +119,12 @@ const html_footer = `</div>
 const express = require('express');
 const app = express();
 
+const bodyParser= require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: false})); 
+
+const plantas= [];
+
 //Middleware
 
 app.use((request, response, next) => {
@@ -129,14 +135,27 @@ app.use((request, response, next) => {
 
 });
 
-app.use('/plantas/agregar',(request,response,next) => {                  //Registrar un middleware 
-        response.send(html_header + html_form + html_footer); 
+//app.get para registrar un middleware para peticiones HTTP GET 
+
+app.get('/plantas/agregar',(request,response,next) => {                  //Registrar un middleware 
+    console.log(request.body)
+    response.send(html_header + html_form + html_footer); 
 });
+
+//app.post
+
+app.post('/plantas/agregar',(request,response,next) => {
+                      //Registrar un middleware 
+    response.send(html_header + html_form + html_footer); 
+});
+
+
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
+
 
 app.listen(3000);
                       
