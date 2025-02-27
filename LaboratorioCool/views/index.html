@@ -1,8 +1,3 @@
-const express = require('express');
-
-const router = express.Router();
-
-const html_header = `
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,16 +27,12 @@ const html_header = `
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a href="/" class="navbar-item">
+            <a class="navbar-item">
               Home
             </a>
       
-            <a href="/plantas/agregar" class="navbar-item">
-              Agregar planta
-            </a>
-
-            <a href="/plantas/regar" class="navbar-item">
-              Regar plantas
+            <a class="navbar-item">
+              Documentation
             </a>
       
             <div class="navbar-item has-dropdown is-hoverable">
@@ -84,24 +75,21 @@ const html_header = `
     <section class="section">
         <div class="container">
             <h1 class="title">
-                Invernadero
+                Hello World
             </h1>
-            `;
-            
-const html_form = `<form action="/plantas/agregar" method="POST">
-              <label for="nombre" class="label">Nombre de la planta</label>
-              <input
-                class="input is-info"
-                type="text"
-                placeholder="Orquídea"
-                id="nombre"
-                name="nombre"
-              />
-              <br><br>
-              <input class="button is-info" type="submit" value="Enviar">
-            </form>`;
-
-const html_footer = `</div>
+            <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p>
+            <div class="columns">
+                <div class="column">
+                  <button id="boton_regar" class="button is-danger">Regar</button>
+                </div>
+                <div class="column"><span id="imagen_menta"></span></div>
+                <div class="column"><span id="imagen_jacaranda"></span></div>
+                <div class="column"><span id="imagen_maqui"></span></div>
+                <div class="column">5</div>
+              </div>
+        </div>
     </section>
     <footer class="footer">
         <div class="content has-text-centered">
@@ -119,42 +107,3 @@ const html_footer = `</div>
       <script src="js/introjs.js"></script>
   </body>
 </html>
-`;
-
-
-const plantas = [];
-
-//router.get es para registrar un middleware para peticiones HTTP GET, para que un middle ware exista necesita una funcion anónima
-router.get('/agregar', (request, response, next) => {
-    response.send(html_header + html_form + html_footer);
-});
-
-//router.post es para registrar un middleware para peticiones HTTP POST
-router.post('/agregar', (request, response, next) => {
-    console.log(request.body);
-    plantas.push(request.body.nombre);
-    let html = html_header;
-    html += `<div class="columns">`;
-    for(let planta of plantas) {
-        html += `<div class="column">`;
-        html += `<div class="card">
-        <div class="card-content">
-          <div class="content">`;
-        html += planta;
-        html += `</div>
-                </div>
-              </div>
-            </div>`;
-    }
-    html += `</div>`;
-    html += html_footer;
-    response.send(html);
-});
-
-const path = require('path');
-
-router.get('/regar', (request, response, next) => {
-  response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
-});
-
-module.exports = router;
