@@ -1,11 +1,12 @@
 const express = require('express');
-const app = express();
+const app = express(); //guardamos la variable el servidor web
 
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); 
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false})); //de manera autmatica cada peticion que se envia al servidor los convierte de binario y string lo transforma en una forma mas amigable tock
 
-//Middleware
+//Middleware -- todo lo que hacemos en express - capaz de nuestra lasaña
+
 app.use((request, response, next) => {
     console.log('Middleware!');
 
@@ -15,13 +16,13 @@ app.use((request, response, next) => {
 
 const plantasRoutes = require('./routes/plantas.routes');
 
-app.use('/plantas', plantasRoutes);
+app.use('/plantas', plantasRoutes); //plantamos un middle ware en la ruta plantas, le voy a poner ahi lo que tenga el router de este archivo el post y get del archivo "plantas.routes"
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
     
-    //Manda la respuesta
-    response.send('¡Hola mundo!'); 
+    //Manda la respuesta en caso de que la ruta no exista
+    response.status(404).send('No se encuentra lo que estás buscando!'); 
 });
 
 app.listen(3000);
