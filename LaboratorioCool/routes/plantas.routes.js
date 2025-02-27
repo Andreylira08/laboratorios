@@ -129,6 +129,7 @@ router.get('/agregar', (request, response, next) => {
     response.send(html_header + html_form + html_footer);
 });
 
+
 //router.post es para registrar un middleware para peticiones HTTP POST
 router.post('/agregar', (request, response, next) => {
     console.log(request.body);
@@ -154,7 +155,7 @@ router.post('/agregar', (request, response, next) => {
 const path = require('path');
 
 router.get('/regar', (request, response, next) => {
-  response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+  response.sendFile(path.join(__dirname, '..', 'views', 'index.html')); //LA RUTA TIENE QUE SER ABSOLUTA, POR QUE YA TE ENCUENTRAS EN EL DIRECTORIO PUBLIC
 });
 
 module.exports = router;
