@@ -1,4 +1,18 @@
-const html_header = `
+const file_system = require('fs');
+
+file_system.writeFileSync('hola.txt', 'Hola desde node');
+
+setTimeout(() => { console.log("jojo te hackié") }, 10000);
+
+const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
+
+for (let item of arreglo) {
+    setTimeout(() => {
+        console.log(item);
+    }, item);
+} 
+
+const html = `
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,24 +90,21 @@ const html_header = `
     <section class="section">
         <div class="container">
             <h1 class="title">
-                Invernadero
+                Hello World
             </h1>
-            `;
-            
-const html_form = `<form action="/agregar" method="POST">
-              <label for="nombre" class="label">Nombre de la planta</label>
-              <input
-                class="input is-info"
-                type="text"
-                placeholder="Orquídea"
-                id="nombre"
-                name="nombre"
-              />
-              <br><br>
-              <input class="button is-info" type="submit" value="Enviar">
-            </form>`;
-
-const html_footer = `</div>
+            <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p>
+            <div class="columns">
+                <div class="column">
+                  <button id="boton_regar" class="button is-danger">Regar</button>
+                </div>
+                <div class="column"><span id="imagen_menta"></span></div>
+                <div class="column"><span id="imagen_jacaranda"></span></div>
+                <div class="column"><span id="imagen_maqui"></span></div>
+                <div class="column">5</div>
+              </div>
+        </div>
     </section>
     <footer class="footer">
         <div class="content has-text-centered">
@@ -115,40 +126,10 @@ const html_footer = `</div>
 
 const http = require('http');
 
-const server = http.createServer( (request, response) => {  
-  
-  if(request.method == "GET" && (request.url == "/agregar" || request.url == "/")) {
+const server = http.createServer( (request, response) => {    
     console.log(request.url);
     response.setHeader('Content-Type', 'text/html');
-    response.write(html_header + html_form + html_footer);
+    response.write(html);
     response.end();
-  } else if(request.method == "POST" && request.url == "/agregar") {
-
-    request.on('data', () =>{
-        console.log(data); //---->> Llega el nombre en hexadecimal ----> lo que se lleno en el form
-    });
-
-    const datos_completos = [];
-    request.on('end',() =>{
-       const string_datos_completos = Buffer.concat(datos_completos).toString();
-        console.log(string_datos_completos); 
-        //split () separa un string por el parámetro recibido,
-        //y cada parte la pone en un arreglo
-        const nueva_planta =string_datos_completos.split('='[1]);
-
-        //si fueran 2 inputs:
-        // const nueva_planta =string_datos_completos.split('&'[0].split('=')[1]);
-    });
-
-  } else {
-    response.statusCode = 404;
-    response.setHeader('Content-Type', 'text/html');
-    response.write(html_header);
-    response.write('<div class="notification is-danger">La página no existe</div>');
-    response.write(html_footer);
-    response.end();
-  }
-    
 });
-
 server.listen(3000);
