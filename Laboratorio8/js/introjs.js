@@ -1,3 +1,5 @@
+const { Readline } = require("readline/promises");
+
 // consola (log, info, warn, error, assert)
 console.log("Aquí se habla de plantas");
 console.info("las plantas sirven para muchas cosas");
@@ -92,6 +94,34 @@ const objeto = {};
 
 objeto.color = "verde";
 objeto.tipo = "orquídea";
+
+//obtiene un arreglo para obtener el promedio 
+const ciclo = () => {
+
+    const array=[]; 
+    do{
+        
+        let numeros = prompt("Dame una serie de números y te doy el promedio en la consola");
+        let numeros2 = parsefloat(numeros); 
+        if (numeros === "" || numeros === null) break;
+        array.push(numeros2);
+    } while(true); 
+    const promedio = array.reduce((acc, num) => acc + num, 0) / array.length;
+    console.log(`El promedio es: ${promedio}`);
+    
+}
+
+ciclo()
+
+//media 
+
+let num1 = prompt("Dame una serie de números y te doy el promedio en la consola");
+let num2 = prompt("Dame una serie de números y te doy el promedio en la consola");
+let num3 = prompt("Dame una serie de números y te doy el promedio en la consola");
+
+const media = (num + num2 + num3) / 3;
+console.log(`La media de los tres números es: ${media}`);
+
 
 
 // modificar html
