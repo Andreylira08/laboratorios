@@ -9,8 +9,14 @@ exports.post_agregar =(request, response, next) => {
     console.log(request.body);
     const mi_planta = new Planta(request.body.nombre); 
     mi_planta.save();
-  
+
+    response.redirect('/plantas/');
+}
+
+exports.get_root = (request, response, next) => {
     response.render('lista_plantas', { //mandamos la variable al ejs
-      plantas: Planta.fetchAll(),
-    });
-  };
+     plantas: Planta.fetchAll(),})
+};
+
+
+

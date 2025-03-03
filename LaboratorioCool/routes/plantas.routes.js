@@ -24,4 +24,6 @@ router.get('/regar', (request, response, next) => {
   response.sendFile(path.join(__dirname, '..', 'views', 'index.html')); //LA RUTA TIENE QUE SER ABSOLUTA, POR QUE YA TE ENCUENTRAS EN EL DIRECTORIO PUBLIC
 });
 
+router.get('/',plantas_controller.get_root); 
+
 module.exports = router;

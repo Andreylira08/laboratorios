@@ -1,21 +1,20 @@
 const plantas = [];
 
+module.exports = class Planta {
 
-module.exports= class Planta {
-
-
-        constructor(mi_nombre){
-
+    //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
+    constructor(mi_nombre) {
         this.nombre = mi_nombre;
-    
     }
-        save(){
-            plantas.push(this.nombre)
 
-        }
+    //Este método servirá para guardar de manera persistente el nuevo objeto. 
+    save() {
+        plantas.push(this);
+    }
 
-        static fetchAll(){
-            return plantas;
-        }
+    //Este método servirá para devolver los objetos del almacenamiento persistente.
+    static fetchAll() {
+        return plantas;
+    }
 
 }
