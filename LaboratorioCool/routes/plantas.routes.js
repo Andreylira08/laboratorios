@@ -11,6 +11,8 @@ const plantas_controller = require ('../controllers/plantas.controller');
 
 router.get('/agregar',plantas_controller.get_agregar); //SEPARANDO LA LÓGICA DE LAS RUTAS
 
+router.get('/add',plantas_controller.get_agregar); //AGREGANDO OTRA RUTA QUE HACE EXACTAMENTE LO MISMO 
+
 
 //router.post es para registrar un middleware para peticiones HTTP POST
 
