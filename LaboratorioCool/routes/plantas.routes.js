@@ -2,25 +2,19 @@ const express = require('express');
 
 const router = express.Router();
 
+const plantas_controller = require ('../controllers/plantas.controller'); 
 
-const plantas = [];
+
 
 //router.get es para registrar un middleware para peticiones HTTP GET, para que un middle ware exista necesita una funcion anónima
-router.get('/agregar', (request, response, next) => {
-    response.render('agregar_planta');
-});
+
+
+router.get('/agregar',plantas_controller.get_agregar); //SEPARANDO LA LÓGICA DE LAS RUTAS
 
 
 //router.post es para registrar un middleware para peticiones HTTP POST
 
-router.post('/agregar', (request, response, next) => {
-  console.log(request.body);
-  plantas.push(request.body.nombre);
-
-  response.render('lista_plantas', { //mandamos la variable al ejs
-    plantas: plantas,
-  });
-});
+router.post('/agregar', plantas_controller.post_agregar);
 
 const path = require('path');
 
