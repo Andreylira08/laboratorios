@@ -25,6 +25,9 @@ const plantasRoutes = require('./routes/plantas.routes');
 
 app.use('/plantas', plantasRoutes); //plantamos un middle ware en la ruta plantas, le voy a poner ahi lo que tenga el router de este archivo el post y get del archivo "plantas.routes"
 
+const menuRoutes =require('./routes/menu.routes');
+app.use('',menuRoutes);
+
 app.use((request, response, next) => {
     console.log('Otro middleware!');
     

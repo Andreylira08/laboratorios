@@ -2,12 +2,6 @@ const express = require('express');
 
 const router = express.Router();
 
-const html_header = ``;
-            
-const html_form = ``;
-
-const html_footer = ``;
-
 
 const plantas = [];
 
