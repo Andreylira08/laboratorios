@@ -66,12 +66,18 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
+                <% if (isLoggedIn) { %>
+                <a href="/users/logout" class="button is-danger">
+                    Logout
+                  </a>
+                <% } else { %>
                 <a class="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a class="button is-light">
+                <a href="/users/login" class="button is-light">
                   Log in
                 </a>
+                <% } %>
               </div>
             </div>
           </div>
@@ -82,4 +88,3 @@
             <h1 class="title">
                 Invernadero
             </h1>
-            

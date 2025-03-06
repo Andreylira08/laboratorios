@@ -18,9 +18,17 @@ app.use(session({
 }));
 
 
+
 const bodyParser = require('body-parser'); 
 
 app.use(bodyParser.urlencoded({extended: false})); //de manera autmatica cada peticion que se envia al servidor los convierte de binario y string lo transforma en una forma mas amigable tock
+
+
+
+const usersRoutes = require('./routes/users.routes');
+app.use('/users',usersRoutes);
+
+
 
 //Middleware -- todo lo que hacemos en express - capaz de nuestra lasaña
 
@@ -32,7 +40,6 @@ app.use((request, response, next) => {
 });
 
 const plantasRoutes = require('./routes/plantas.routes');
-
 app.use('/plantas', plantasRoutes); //plantamos un middle ware en la ruta plantas, le voy a poner ahi lo que tenga el router de este archivo el post y get del archivo "plantas.routes"
 
 const menuRoutes =require('./routes/menu.routes');
