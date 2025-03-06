@@ -31,15 +31,16 @@
             <a href="/menu" class="navbar-item">
               Home
             </a>
-      
-            <a href="/plantas/agregar" class="navbar-item">
-              Agregar planta
-            </a>
 
-            <a href="/plantas/regar" class="navbar-item">
-              Regar plantas
-            </a>
-      
+            <% if (isLoggedIn) { %>
+              <a href="/plantas/agregar" class="navbar-item">
+                Agregar planta
+              </a>
+              <a href="/plantas/regar" class="navbar-item">
+                Regar plantas
+              </a>
+              
+              <% } %>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 More
@@ -67,6 +68,7 @@
             <div class="navbar-item">
               <div class="buttons">
                 <% if (isLoggedIn) { %>
+                  <%= username %> | 
                 <a href="/users/logout" class="button is-danger">
                     Logout
                   </a>
