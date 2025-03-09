@@ -1,7 +1,7 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-const menu_controller = require('../controllers/menu.controller')
+const menu_controller = require('../controllers/menu.controller');
 
 //ROUTER.GET RECIBE MIDDLEWARE PETICIONES HTTP GET  
 
