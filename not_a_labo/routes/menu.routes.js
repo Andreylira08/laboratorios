@@ -6,5 +6,7 @@ const menu_controller = require('../controllers/menu.controller');
 //ROUTER.GET RECIBE MIDDLEWARE PETICIONES HTTP GET  
 
 router.get('/menu', menu_controller.get_menu); 
+
+router.get("/perrito",menu_controller.get_perrito);
   
 module.exports = router;   

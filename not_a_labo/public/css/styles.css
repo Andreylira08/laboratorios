@@ -8,6 +8,7 @@
 
 .menu{
     background-color: rgb(240, 195, 247);
+    color: black;
 }
 
 section{
@@ -23,8 +24,14 @@ section{
     color: black;
 }
 
-.button-is-primary{
 
-    color: rgb(141, 46, 219)
-    
+h2{
+
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 0 auto; /* Centra el elemento en su contenedor */
+    padding: 20px 0; /* Añade espacio arriba y abajo */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    color: #d80000; /* Color del texto */
+    width: 100%; /* Ocupa todo el ancho disponible */
+
 }
