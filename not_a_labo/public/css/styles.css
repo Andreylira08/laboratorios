@@ -1,0 +1,24 @@
+.Morado {
+    background-color:rgb(178, 128, 225);
+}
+
+.title {
+    color: black;
+}
+
+.menu{
+    background-color: rgb(240, 195, 247);
+}
+
+section{
+    background-color: rgb(120, 33, 249);
+}
+
+
+.navbar-item {
+    color: rgb(255, 255, 255) !important;
+}
+
+.subtitle{
+    color: black;
+}
