@@ -1,0 +1,17 @@
+<%- include('includes/_header_') %>
+
+<div class="columns">
+<% for(let marvel of n_marvel) { %>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <%= marvel.nombre %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+</div>
+
+<%- include('includes/_footer_') %>

@@ -34,7 +34,7 @@ app.use('/',menuRoutes);
 
 
 const backRoutes= require('./routes/back.routes');
-app.use('/',backRoutes);
+app.use('/backend',backRoutes);
 
 
 

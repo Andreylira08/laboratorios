@@ -35,3 +35,23 @@ h2{
     width: 100%; /* Ocupa todo el ancho disponible */
 
 }
+
+
+.label {
+    font-size: 2rem; /* Tamaño grande */
+    font-weight: 700; /* Negrita */
+    color: #6a1b9a; /* Color morado oscuro */
+    margin-bottom: 1.5rem; 
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+ 
+}
+
+
+:root {
+    --bulma-primary-h: 306deg;
+    --bulma-primary-l: 38%;
+    --bulma-link-h: 314deg;
+    --bulma-link-l: 59%;
+  }
