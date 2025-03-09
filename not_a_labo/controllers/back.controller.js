@@ -3,7 +3,11 @@ const fs = require('fs'); // Módulo para manejar archivos
 
 
 exports.get_back = (request, response, next) => {
-    response.render('back'); 
+    console.log(request.session.username);
+    response.render('back', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
+    });
 };
 
 exports.post_agregar =(request, response, next) => {
@@ -11,6 +15,8 @@ exports.post_agregar =(request, response, next) => {
     const nombre = request.body.nombre; // Obtenemos el nombre del formulario
     const mi_marvel = new Marvel(nombre);
     mi_marvel.save();
+
+    response.setHeader('Set-Cookie', `ultima_marvel=${mi_marvel.nombre}`);
 
     // Guardar el nombre en un archivo de texto
     fs.appendFile('marvel_nombres.txt', `${nombre}\n`, (err) => {
@@ -20,7 +26,10 @@ exports.post_agregar =(request, response, next) => {
 };
 
 exports.get_nombres = (request, response, next) => {
+    console.log(request.get('Cookie'));
     response.render('lista_nombres', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
         n_marvel: Marvel.fetchAll(),
     });
 };
