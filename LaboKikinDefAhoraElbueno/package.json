@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "node": "^23.9.0"
+  },
+  "name": "labokikindefahoraelbueno",
+  "version": "1.0.0",
+  "description": "Labo",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andreylira08/laboratorios.git"
+  },
+  "author": "Enrique Ramírez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andreylira08/laboratorios/issues"
+  },
+  "homepage": "https://github.com/Andreylira08/laboratorios#readme"
+}
