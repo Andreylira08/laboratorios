@@ -18,6 +18,27 @@ exports.post_agregar =(request, response, next) => {
 
     response.setHeader('Set-Cookie', `ultima_marvel=${mi_marvel.nombre}`);
 
+
+    //modificando controlador para la bd
+
+    mi_planta.save() 
+        .then(() => {
+            console.log("heroe guardada");
+            response.redirect('/backend/nombres');
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+//__________________________________
+
+
+
+
+
+
+
+
     // Guardar el nombre en un archivo de texto
     fs.appendFile('marvel_nombres.txt', `${nombre}\n`, (err) => {
         console.log('Nombre guardado en marvel_nombres.txt');
