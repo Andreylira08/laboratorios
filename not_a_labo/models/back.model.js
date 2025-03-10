@@ -1,3 +1,4 @@
+const db = require('../util/database');
 const n_marvel = [{nombre: 'Magneto'}, {nombre: 'Wolverine'}];
 
 module.exports = class Marvel {
@@ -10,6 +11,13 @@ module.exports = class Marvel {
     // Método para guardar una nueva planta
     save() {
         n_marvel.push(this); // Agrega la nueva planta al array "plantas"
+        db.execute('INSERT INTO marvel(nombre) VALUES (?)', [this.nombre])
+            .then(() => {
+                console.log("héroe guardado");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     // Método estático para obtener todas las plantas
