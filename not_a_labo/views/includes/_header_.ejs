@@ -16,6 +16,7 @@
       <p class="subtitle">
         La reunion de los <strong>LABOS</strong>!
       </p>
+      <p class="subtitle is-3" >NO ESTAS PERDIDO!! ES HACIA <strong>ABAJO</strong>!!</p>
     </div>
   </section>
   </body>
@@ -30,19 +31,21 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
 
+            <% if (isLoggedIn) { %>
             <div class="navbar-start">
             <a href= "/menu" class="navbar-item">
                 Home
             </a>
 
-            <% if (isLoggedIn) { %>
-            <a href= /backend class="navbar-item">
+            
+            <a href= "/menu/perrito" class="navbar-item">
+                ¿Y este boton a donde lleva?
+            </a>
+
+            <a href= "/backend" class="navbar-item">
                 Back-end!
             </a>
 
-            <a href= /perrito class="navbar-item">
-                ¿Y este boton a donde lleva?
-            </a>
 
             <% } %>
             <div class="navbar-item has-dropdown is-hoverable">
