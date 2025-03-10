@@ -10,6 +10,8 @@ router.get('/', back_controller.get_back);
 
 router.post('/agregar', back_controller.post_agregar); 
 
+router.get('/:id', back_controller.get_nombres);
+
 router.get('/nombres',back_controller.get_nombres)
 
 module.exports = router;

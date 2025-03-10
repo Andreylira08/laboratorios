@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `marvel`
 --
 
-CREATE TABLE `marvel` (
+CREATE TABLE `marvels` (
   `ID` int(10) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -40,7 +40,7 @@ CREATE TABLE `marvel` (
 --
 -- Indexes for table `marvel`
 --
-ALTER TABLE `marvel`
+ALTER TABLE `marvels`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -50,7 +50,7 @@ ALTER TABLE `marvel`
 --
 -- AUTO_INCREMENT for table `marvel`
 --
-ALTER TABLE `marvel`
+ALTER TABLE `marvels`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

@@ -14,16 +14,13 @@ exports.post_agregar =(request, response, next) => {
     console.log(request.body);
     const nombre = request.body.nombre; // Obtenemos el nombre del formulario
     const mi_marvel = new Marvel(nombre);
-    mi_marvel.save();
-
-    response.setHeader('Set-Cookie', `ultima_marvel=${mi_marvel.nombre}`);
 
 
     //modificando controlador para la bd
 
-    mi_planta.save() 
+    mi_marvel.save() 
         .then(() => {
-            console.log("heroe guardada");
+            request.session.info = `El heroe ${mi_marvel.nombre} se ha creado`;
             response.redirect('/backend/nombres');
         })
         .catch((error) => {
@@ -42,15 +39,28 @@ exports.post_agregar =(request, response, next) => {
     // Guardar el nombre en un archivo de texto
     fs.appendFile('marvel_nombres.txt', `${nombre}\n`, (err) => {
         console.log('Nombre guardado en marvel_nombres.txt');
-        response.redirect('/backend/nombres'); // Redirigimos a la lista de nombres
     });
 };
 
 exports.get_nombres = (request, response, next) => {
-    console.log(request.get('Cookie'));
-    response.render('lista_nombres', {
-        isLoggedIn: request.session.isLoggedIn || false,
-        username: request.session.username || '',
-        n_marvel: Marvel.fetchAll(),
-    });
+
+    const mensaje = request.session.info || '';
+    if (request.session.info) {
+        request.session.info = '';
+    }
+
+
+    Marvel.fetch(request.params.id)
+        .then(([rows, fieldData]) => {
+            console.log(fieldData);
+            console.log(rows);
+            response.render('lista_nombres', {
+                isLoggedIn: request.session.isLoggedIn || false,
+                username: request.session.username || '',
+                marvels: rows,
+                info: mensaje,
+            });
+        }).catch((error) => {
+            console.log(error);
+        });
 };
