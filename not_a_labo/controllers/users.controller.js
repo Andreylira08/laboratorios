@@ -1,3 +1,6 @@
+const Usuario = require('../models/users.model');
+
+
 exports.get_signup = (request, response, next) => {
     response.render('login.ejs', {
         isLoggedIn: request.session.isLoggedIn || false,
@@ -6,6 +9,13 @@ exports.get_signup = (request, response, next) => {
     });
 };
 exports.post_signup = (request, response, next) => {
+    const usuario = new 
+    Usuario(request.body.username, request.body.password);
+    usuario.save().then(() => {
+    response.redirect('/users/login');
+}).catch((error) => {
+    console.log(error);
+});
 };
 
 exports.get_login = (request, response, next) => {
