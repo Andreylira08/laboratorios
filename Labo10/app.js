@@ -1,3 +1,108 @@
+const html_perrito=`<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WOW!</title>
+  <link rel="stylesheet" media="all" href="css/dog.css" />
+</head>
+<body>
+<h1>Animación obtenida de una plantila!! No es mía, no se confundan lol</h1>
+<div class="container">
+  <div class="box">
+    <div class="sign"></div>
+  </div>
+  <div class="dog">
+    <div class="dog-group">
+      <div class="tongue-open"></div>
+      <div class="body-group">
+        <div class="dog-box">
+          <div class="dog-box-sign">
+            <div class="content"></div>
+          </div>
+          <div class="bottom-shadow"></div>
+          <div class="top-left-shadow"></div>
+        </div>
+        <div class="tail-group">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail">
+                <div class="tail">
+                  <div class="tail">
+                    <div class="tail">
+                      <div class="tail last"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dog-shape"></div>
+      </div>
+      <div class="head-group">
+        <div class="ear">
+          <div class="ear-container">
+            <div class="ear-left"></div>
+          </div>
+        </div>
+        <div class="head"></div>
+        <div class="ear right">
+          <div class="ear-container">
+            <div class="ear-right"></div>
+          </div>
+        </div>
+        <div class="face">
+          <div class="muzzle">
+            <div class="nose"></div>
+            <div class="mouth-close"></div>
+            <div class="mouth-open">
+              <div class="teeth"></div>
+            </div>
+            <div class="mouth-barks"></div>
+          </div>
+          <div class="eyes">
+            <div class="eye-left">
+              <div class="pupil"></div>
+            </div>
+            <div class="eye-right">
+              <div class="pupil"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plant-group">
+    <div class="pot"></div>
+    <div class="plant">
+      <div class="stem">
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+      </div>
+    </div>
+  </div>
+  <div class="shapes">
+    <div class="red-shape"></div>
+    <div class="blue-shape"></div>
+    <div class="yellow-shape"></div>
+  </div>
+</div>
+</body>
+
+<div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-start">
+  <a href= "/agregar" class="navbar-item">
+      Home
+  </a>
+
+
+</html>`;
+
+
 const html_header= `
 <!DOCTYPE html>
 <html>
@@ -32,16 +137,16 @@ const html_header= `
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-            <a href= "/menu" class="navbar-item">
+            <a href= "" class="navbar-item">
                 Home
             </a>
 
             
-            <a href= "/menu/perrito" class="navbar-item">
+            <a href= "/perrito" class="navbar-item">
                 ¿Y este boton a donde lleva?
             </a>
            
-            <a href= "/agregar" class="navbar-item">
+            <a href= "/backdoor" class="navbar-item">
                 Back-end!
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -114,9 +219,19 @@ const html_footer=  `
       </p>
     </div>
   </footer>
+  <script src="js/introjs.js"></script>
 </body>
 </html>
  `;
+ 
+ const html_back=  `
+<div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-start">
+  <a href= "/agregar" class="navbar-item">
+      Home
+  </a>
+
+Aqui no hay nada lol `;
 const plantas = [];
 
 
@@ -128,7 +243,20 @@ const server = http.createServer( (request, response) => {
       response.setHeader('Content-Type', 'text/html');
       response.write(html_header + html_form + html_footer);
       response.end();
-    } else if(request.method == "POST" && request.url == "/agregar") {
+    
+    }else if(request.method == "GET" && (request.url == "/perrito" || request.url == "/")) {
+        console.log(request.url);
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html_perrito);
+        response.end();
+      
+    }else if(request.method == "GET" && (request.url == "/backdoor" || request.url == "/")) {
+        console.log(request.url);
+        response.setHeader('Content-Type', 'text/html');
+        response.write(html_back);
+        response.end();
+      
+    }else if(request.method == "POST" && request.url == "/agregar") {
       
       const datos_completos = [];
   
