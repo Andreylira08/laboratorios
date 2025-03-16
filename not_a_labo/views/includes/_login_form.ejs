@@ -1,3 +1,11 @@
+<% if (info != '') { %>
+  <div class="notification is-info">
+      <%= info %>
+  </div>
+<% } %>
+
+
+
 <form action=
   "/users/<% if (isNew) { %>signup<% } else { %>login<% } %>" 
   method="POST"
