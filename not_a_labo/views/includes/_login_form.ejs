@@ -1,4 +1,7 @@
-<form action="/users/login" method="POST" class="log">
+<form action=
+  "/users/<% if (isNew) { %>signup<% } else { %>login<% } %>" 
+  method="POST"
+  >
   <div class="field">
     <label for="username" class="label">Usuario</label>
     <div class="control">

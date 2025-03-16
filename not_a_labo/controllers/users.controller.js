@@ -1,7 +1,18 @@
+exports.get_signup = (request, response, next) => {
+    response.render('login.ejs', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
+        isNew: true,
+    });
+};
+exports.post_signup = (request, response, next) => {
+};
+
 exports.get_login = (request, response, next) => {
     response.render('login.ejs', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        isNew: false,
     });
 };
 
