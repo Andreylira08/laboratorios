@@ -8,6 +8,8 @@ exports.get_back = (request, response, next) => {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
         csrfToken: request.csrfToken(),
+        privilegios: request.session.privilegios || [],
+
 
     });
 };
@@ -63,6 +65,8 @@ exports.get_nombres = (request, response, next) => {
                 username: request.session.username || '',
                 marvels: rows,
                 info: mensaje,
+                privilegios: request.session.privilegios || [],
+
             });
         }).catch((error) => {
             console.log(error);

@@ -42,9 +42,13 @@
                 ¿Y este boton a donde lleva?
             </a>
            
-            <a href= "/backend" class="navbar-item">
-                Back-end!
-            </a>
+            <% for (let privilegio of privilegios) { %>
+                <% if(privilegio.nombre == "agregar plantas") { %>
+                  <a href="/backend" class="navbar-item">
+                    Back end!
+                  </a>
+                <% } %>
+              <% } %>
 
 
             <% } %>

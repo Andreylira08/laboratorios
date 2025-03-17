@@ -13,6 +13,7 @@ exports.get_signup = (request, response, next) => {
         info: mensaje,
         warning: '',
         csrfToken: request.csrfToken(),
+        
 
 
     });
@@ -47,6 +48,8 @@ exports.get_login = (request, response, next) => {
         info: mensaje,
         warning: warning,
         csrfToken: request.csrfToken(),
+        privilegios: request.session.privilegios || [],
+
 
 
     });
