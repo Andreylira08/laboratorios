@@ -1,3 +1,5 @@
 magneto
 magneto
 Spiderman
+spiderman
+iron man
