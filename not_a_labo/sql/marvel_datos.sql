@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 02:26 AM
+-- Generation Time: Mar 17, 2025 at 02:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -57,6 +57,15 @@ CREATE TABLE `posee` (
   `id_privilegio` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Dumping data for table `posee`
+--
+
+INSERT INTO `posee` (`id_rol`, `id_privilegio`, `created_at`) VALUES
+(2, 1, '2025-03-17 01:45:41'),
+(3, 1, '2025-03-17 01:45:35'),
+(3, 2, '2025-03-17 01:45:29');
 
 -- --------------------------------------------------------
 
