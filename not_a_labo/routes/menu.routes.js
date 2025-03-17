@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 const isAuth = require('../util/is-auth');
-
+const canView = require('../util/canViewNombres');
+const canCreate = require('../util/canCreateNombres');
 
 const menu_controller = require('../controllers/menu.controller');
 
