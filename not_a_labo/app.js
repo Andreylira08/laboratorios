@@ -26,6 +26,11 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false})); //de manera autmatica cada peticion que se envia al servidor los convierte de binario y string lo transforma en una forma mas amigable tock
 
+
+const csrf = require('csurf');
+const csrfProtection = csrf(); 
+app.use(csrfProtection); 
+
 //Middleware --Las capaz de nuestra lasaña
 
 //Middleware -- todo lo que hacemos en express - capaz de nuestra lasaña

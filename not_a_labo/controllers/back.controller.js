@@ -7,6 +7,8 @@ exports.get_back = (request, response, next) => {
     response.render('back', {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
+
     });
 };
 
