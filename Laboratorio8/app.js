@@ -1,3 +1,20 @@
+const file_system = require('fs');
+const http = require('http');
+
+
+file_system.writeFileSync('hola.txt', 'Hola desde node');
+
+setTimeout(() => { console.log("jojo te hackié") }, 10000);
+
+
+const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
+
+for (let item of arreglo) {
+  setTimeout(() => {
+      console.log(item);
+  }, item);
+} 
+
 const html = `
 <!DOCTYPE html>
 <html>
@@ -109,8 +126,6 @@ const html = `
 </html>
 `;
 
-const http = require('http');
-
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
     response.setHeader('Content-Type', 'text/html');
@@ -119,16 +134,3 @@ const server = http.createServer( (request, response) => {
 });
 server.listen(3000);
 
-const file_system = require('fs');
-
-file_system.writeFileSync('hola.txt', 'Hola desde node');
-
-setTimeout(() => { console.log("jojo te hackié") }, 10000);
-
-const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
-
-for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
-} 

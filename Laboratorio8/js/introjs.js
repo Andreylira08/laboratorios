@@ -1,5 +1,3 @@
-const { Readline } = require("readline/promises");
-
 // consola (log, info, warn, error, assert)
 console.log("Aquí se habla de plantas");
 console.info("las plantas sirven para muchas cosas");
@@ -125,7 +123,7 @@ console.log(`La media de los tres números es: ${media}`);
 
 
 // modificar html
-const boton = document.getElementById("boton_regar");
+    const boton = document.getElementById("boton_regar");
 
 const poner_imagen_menta = () => {
     const imagen = document.getElementById("imagen_menta");
