@@ -43,9 +43,9 @@ node "Servidor de Apps Empleados\naplicacionesempleados.universidad.mx" as AppEm
   artifact "App Móvil Management"
 }
 
-database "BD Distribuida\ninscripcionesdatos1.universidad.mx" as DB1
-database "BD Distribuida\ninscripcionesdatos2.universidad.mx" as DB2
-database "BD Distribuida\ninscripcionesdatos3.universidad.mx" as DB3
+database "BD \ninscripcionesdatos1.universidad.mx" as DB1
+database "BD \ninscripcionesdatos2.universidad.mx" as DB2
+database "BD \ninscripcionesdatos3.universidad.mx" as DB3
 
 
 
