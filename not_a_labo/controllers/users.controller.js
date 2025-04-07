@@ -16,7 +16,6 @@ exports.get_signup = (request, response, next) => {
         privilegios: request.session.privilegios || [],
 
 
-
     });
 };
 exports.post_signup = (request, response, next) => {
