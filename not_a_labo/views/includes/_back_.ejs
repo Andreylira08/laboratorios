@@ -1,4 +1,5 @@
 <form action="/backend/agregar" method="POST" class="log">
+<form action="/backend/agregar" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <div class="menu">
     <br><br>
@@ -12,6 +13,14 @@
       name="nombre"
     />
     <br><br>
+    <div class="file">
+      <label for="imagen" class="file-label">
+        <input type="file" class="file-input" id="imagen" name="imagen">
+        <span class="file-cta">
+          <span class="file-label"> Escoge una imagen… </span>
+        </span>
+      </label>
+    </div>
     <input class="button is-link is-rounded" type="submit" value="Enviar">
     
 </div>
