@@ -77,7 +77,8 @@ app.use('/menu',menuRoutes);
 const backRoutes= require('./routes/back.routes');
 app.use('/backend',backRoutes);
 
-
+const pokedexRoutes = require('./routes/pokedex.routes'); // NEW
+app.use('/pokedex', pokedexRoutes); // NEW
 
 
 

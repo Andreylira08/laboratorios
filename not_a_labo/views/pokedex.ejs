@@ -1,0 +1,21 @@
+<%- include('includes/_header_.ejs') %>
+<link rel="stylesheet" href="/css/pokedex.css">
+</head>
+<body>
+    <main>
+        <h1>Pokédex</h1>
+        <div class="pokemon-grid">
+            <% for (let poke of pokemon) { %>
+                <div class="pokemon-card">
+                    <a href="/pokedex/<%= poke.name %>">
+                        <div class="pokemon-image-container">
+                            <img class="pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= poke.url.split('/')[6] %>.png" alt="<%= poke.name %>">
+                        </div>
+                        <h3 class="pokemon-name"><%= poke.name.charAt(0).toUpperCase() + poke.name.slice(1) %></h3>
+                        <p class="pokemon-number">#<%= poke.url.split('/')[6].padStart(3, '0') %></p>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+    </main>
+<%- include('includes/_footer_.ejs') %>
