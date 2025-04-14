@@ -13,10 +13,10 @@ const back_controller = require('../controllers/back.controller');
 
 router.get('/', isAuth,canCreate,back_controller.get_back); 
 
-router.post('/agregar',isAuth,canCreate, back_controller.post_agregar); 
+router.post('/agregar',isAuth,canCreate, canView, back_controller.post_agregar); 
 
-router.get('/:id',isAuth,canView, back_controller.get_nombres);
+router.get('/nombres',isAuth,canView,canCreate,back_controller.get_nombres);
 
-router.get('/nombres',isAuth,canView,back_controller.get_nombres)
+router.get('/:id',isAuth,canView,canCreate, back_controller.get_nombres);
 
 module.exports = router;
