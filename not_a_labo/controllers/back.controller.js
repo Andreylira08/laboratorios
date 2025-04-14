@@ -14,29 +14,20 @@ exports.get_back = (request, response, next) => {
     });
 };
 
-exports.post_agregar =(request, response, next) => {
-    console.log(request.body);
-    const nombre = request.body.nombre; // Obtenemos el nombre del formulario
-    const mi_marvel = new Marvel(nombre);
+exports.post_agregar = (req, res, next) => {
+    const nombre = req.body.nombre;
+    const imagen = req.file.filename || null; // si estás subiendo solo 1 imagen
 
+    const mi_marvel = new Marvel(nombre, imagen);
 
-    //modificando controlador para la bd
-
-    mi_marvel.save() 
+    mi_marvel.save()
         .then(() => {
-            request.session.info = `El heroe ${mi_marvel.nombre} se ha creado`;
-            response.redirect('/backend/nombres');
+            req.session.info = `El héroe ${mi_marvel.nombre} se ha creado`;
+            res.redirect('/backend/nombres');
         })
-        .catch((error) => {
-            console.log(error);
-        });
+        .catch(error => console.log(error));
 
 //__________________________________
-
-
-
-
-
 
 
 

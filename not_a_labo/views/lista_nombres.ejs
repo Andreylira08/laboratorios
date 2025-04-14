@@ -13,32 +13,40 @@
         </h1>
         
         <div class="columns is-multiline">
-            <% for(let marvel of marvels) { %>
-                <div class="column is-3">
+            <% for (let marvel of marvels) { %>
+                <div class="column is-one-third">
                     <div class="card">
+                        <!-- Imagen principal -->
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="/api/placeholder/400/300" alt="<%= marvel.nombre %> image">
+                                <img src="/uploads/<%= marvel.imagen %>" alt="Imagen de <%= marvel.nombre %>">
                             </figure>
                         </div>
+            
+                        <!-- Contenido -->
                         <div class="card-content">
                             <div class="content">
-                                <a href="/backend/nombres/<%= marvel.id %>" class="is-size-5 has-text-weight-bold has-text-danger">
-                                    <%= marvel.nombre %>
-                                </a>
-                                <p class="is-size-7 mt-2">
-                                    <i class="far fa-calendar"></i> <%= marvel.created_at %>
-                                </p>
+                                <a href="/backend/nombres/<%= marvel.id %>"><%= marvel.nombre %></a>
+                                <p class="has-text-grey"><%= marvel.created_at %></p>
+                            </div>
+            
+                            <!-- Miniatura -->
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="/uploads/<%= marvel.imagen %>" alt="Miniatura de <%= marvel.nombre %>">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-5">@<%= marvel.nombre %></p>
+                                </div>
                             </div>
                         </div>
-                        <footer class="card-footer">
-                            <a class="card-footer-item">Details</a>
-                            <a class="card-footer-item">Edit</a>
-                        </footer>
                     </div>
                 </div>
             <% } %>
-        </div>
+            </div>
+            
     </div>
 </section>
 
